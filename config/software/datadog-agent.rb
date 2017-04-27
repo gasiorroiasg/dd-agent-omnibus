@@ -184,6 +184,9 @@ build do
     # The GUI also needs to have the certificate in its folder to send flares
     copy "datadog-cert.pem", "#{install_dir}/dist/datadog-cert.pem"
 
+    copy "#{install_dir}/dist/msvc*.dll", "#{install_dir}/embedded/DLLs"
+    copy "#{install_dir}/dist/Microsoft*.manifest", "#{install_dir}/embedded/DLLs"
+
     # Special directories, which won't be installed at the same place than others (ProgramData)
     mkdir "../../extra_package_files"
     mkdir "../../extra_package_files/EXAMPLECONFSLOCATION"
